@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+service mysql start
+service apache2 start
+
+if [[ -n "$PROJECT_DIR" ]]; then
+  rm -r /var/www/html
+  ln -s $PROJECT_DIR /var/www/html
+fi
